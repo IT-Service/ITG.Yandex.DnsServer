@@ -184,7 +184,8 @@ function Get-DnsServerResourceRecord {
 			Метод (обёртка над Яндекс.API get_domain_records) предназначен для 
 			получения записей из зоны "припаркованного" на Яндексе домене. 
 			Интерфейс командлета максимально приближен к аналогичному командлету 
-			модуля DnsServer Windows Server 2012. 
+			модуля DnsServer Windows Server 2012.
+			Все функции данного модуля используют ITG.Yandex, в частности - Get-Token.
 		.Link
 			[API Яндекс.DNS - get_domain_records](http://api.yandex.ru/pdd/doc/api-pdd/reference/api-dns_get_domain_records.xml)
 		.Link
@@ -277,8 +278,6 @@ function Add-DnsServerResourceRecord {
 			Здесь же в параметрах следует видеть только явно заданные параметры. 
 			Интерфейс командлета максимально приближен к аналогичному командлету 
 			модуля DnsServer Windows Server 2012. 
-		.Link
-			[API Яндекс.DNS - add_a_record](http://api.yandex.ru/pdd/doc/api-pdd/reference/api-dns_add_a_record.xml)
 		.Example
 			Get-DnsServerResourceRecord -ZoneName 'csm.nov.local' -RRType 'A','CNAME','AAAA' | Add-YandexDnsServerResourceRecord -ZoneName 'csm.nov.ru';
 			"Копирование" всех записей типа A, AAAA, CNAME из локальной зоны DNS в публичную зону DNS, размещённую на серверах Яндекса.
@@ -454,7 +453,7 @@ function Invoke-APIDnsServerResourceRecord {
 		[switch]
 		$PassThru
 	,
-		# параметр Content содержит FQDN, и в том случае, если заканчивается не на '.', необходимо "дописать" domain.
+		# параметр Content содержит FQDN, и в том случае, если заканчивается не на `.`, необходимо "дописать" domain.
 		[switch]
 		$ContentIsFQDN
 	)
@@ -499,12 +498,6 @@ function Add-DnsServerResourceRecordA {
 			создания новой записи типа A на "припаркованном" на Яндексе домене. 
 			Интерфейс командлета максимально приближен к аналогичному командлету 
 			модуля DnsServer Windows Server 2012. 
-			Синтаксис запроса
-				https://pddimp.yandex.ru/nsapi/add_a_record.xml ? token =<токен>
-					& domain =<имя домена>
-					& [subdomain =<имя субдомена>]
-					& [ttl =<время жизни записи>]
-					& content =<содержимое записи>
 		.Link
 			[API Яндекс.DNS - add_a_record](http://api.yandex.ru/pdd/doc/api-pdd/reference/api-dns_add_a_record.xml)
 		.Link
@@ -585,12 +578,6 @@ function Add-DnsServerResourceRecordAAAA {
 			создания новой записи типа AAAA на "припаркованном" на Яндексе домене. 
 			Интерфейс командлета максимально приближен к аналогичному командлету 
 			модуля DnsServer Windows Server 2012. 
-			Синтаксис запроса: 
-				https://pddimp.yandex.ru/nsapi/add_aaaa_record.xml ? token =<токен>
-					& domain =<имя домена>
-					& [subdomain =<имя субдомена>]
-					& [ttl =<время жизни записи>]
-					& content =<содержимое записи>
 		.Link
 			[API Яндекс.DNS - add_aaaa_record](http://api.yandex.ru/pdd/doc/api-pdd/reference/api-dns_add_aaaa_record.xml)
 		.Link
@@ -674,16 +661,9 @@ function Add-DnsServerResourceRecordCName {
 			Есть некоторая особенность в API Яндекса - он позволяет создавать CName только 
 			для FQDN. Другими словами, создать "короткий" CName со ссылкой на запись того же 
 			домена нельзя, только через FQDN. Данная функция проверяет значение параметра Name 
-			и в том случае, если в конце не '.' (то есть - не FQDN), к значению предварительно 
-			дописывает ZoneName + '.'. Введён данный функционал для обеспечения совместимости с 
+			и в том случае, если в конце не `.` (то есть - не FQDN), к значению предварительно 
+			дописывает ZoneName + `.`. Введён данный функционал для обеспечения совместимости с 
 			командлетами DnsServer. 
-			Синтаксис запроса: 
-				https://pddimp.yandex.ru/nsapi/add_cname_record.xml ?
-					token =<токен>
-					& domain =<имя домена>
-					& [subdomain =<имя субдомена>]
-					& [ttl =<время жизни записи>]
-					& content =<содержимое записи>
 		.Link
 			[API Яндекс.DNS - add_cname_record](http://api.yandex.ru/pdd/doc/api-pdd/reference/api-dns_add_cname_record.xml)
 		.Link
@@ -766,14 +746,6 @@ function Add-DnsServerResourceRecordMX {
 			Интерфейс командлета максимально приближен к аналогичному командлету 
 			модуля DnsServer Windows Server 2012. 
 			В описании API на Яндексе закралась ошибка. API принимает и параметр priority. 
-			Синтаксис запроса: 
-				https://pddimp.yandex.ru/nsapi/add_mx_record.xml ? 
-					token =<токен пользователя>
-					 & domain =<имя домена>
-					 & [subdomain =<имя субдомена>]
-					 & [ttl =<время жизни записи>]
-					 & [priority =<приоритет>]
-					 & content =<содержимое записи>
 		.Link
 			[API Яндекс.DNS - add_mx_record](http://api.yandex.ru/pdd/doc/api-pdd/reference/api-dns_add_mx_record.xml)
 		.Link
@@ -865,13 +837,6 @@ function Add-DnsServerResourceRecordNS {
 			создания новой записи типа NS на "припаркованном" на Яндексе домене.
 			Интерфейс командлета максимально приближен к аналогичному командлету 
 			модуля DnsServer Windows Server 2012. 
-			Синтаксис запроса: 
-				https://pddimp.yandex.ru/nsapi/add_mx_record.xml ? 
-					token =<токен пользователя>
-					 & domain =<имя домена>
-					 & [subdomain =<имя субдомена>]
-					 & [ttl =<время жизни записи>]
-					 & content =<содержимое записи>
 		.Link
 			[API Яндекс.DNS - add_ns_record](http://api.yandex.ru/pdd/doc/api-pdd/reference/api-dns_add_ns_record.xml)
 		.Link
@@ -1148,11 +1113,6 @@ function Remove-DnsServerResourceRecord {
 			удаления записи из зоны "припаркованного" на Яндексе домене. 
 			Интерфейс командлета максимально приближен к аналогичному командлету 
 			модуля DnsServer Windows Server 2012. 
-			Синтаксис запроса: 
-				https://pddimp.yandex.ru/nsapi/delete_record.xml ?
-					token =<токен пользователя> 
-					& domain =<имя домена>
-					& record_id =<id записи>
 		.Link
 			[API Яндекс.DNS - delete_record](http://api.yandex.ru/pdd/doc/api-pdd/reference/api-dns_delete_record.xml)
 		.Link
