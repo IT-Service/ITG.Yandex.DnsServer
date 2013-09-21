@@ -6,7 +6,7 @@
 Windows Server 2012, но на базе DNS серверов Яндекса (естественно, с ограничениями),
 интерфейс максимально приближен к интерфейсу командлет модуля DNSServer.
 
-Версия модуля: **2.0.1**
+Версия модуля: **2.2.0**
 
 Функции модуля
 --------------
@@ -149,7 +149,7 @@ API Яндекс.DNS для доменов
         Позиция? 1
         Значение по умолчанию
         Принимать входные данные конвейера?false
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `Name <String>`
         имя записи
@@ -158,7 +158,7 @@ API Яндекс.DNS для доменов
         Позиция? 2
         Значение по умолчанию
         Принимать входные данные конвейера?false
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `RRType <String>`
         тип записи
@@ -167,7 +167,7 @@ API Яндекс.DNS для доменов
         Позиция? 3
         Значение по умолчанию
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `RecordData <String>`
         содержание записи
@@ -176,7 +176,7 @@ API Яндекс.DNS для доменов
         Позиция? 4
         Значение по умолчанию
         Принимать входные данные конвейера?false
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `TimeToLive <Object>`
         TTL записи
@@ -186,16 +186,16 @@ API Яндекс.DNS для доменов
         Позиция? 5
         Значение по умолчанию
         Принимать входные данные конвейера?false
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `PassThru [<SwitchParameter>]`
         передавать ли описатель созданной записи в конвейер
 
         Требуется? false
         Позиция? named
-        Значение по умолчанию
+        Значение по умолчанию False
         Принимать входные данные конвейера?false
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `WhatIf [<SwitchParameter>]`
 
@@ -203,7 +203,7 @@ API Яндекс.DNS для доменов
         Позиция? named
         Значение по умолчанию
         Принимать входные данные конвейера?false
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `Confirm [<SwitchParameter>]`
 
@@ -211,13 +211,13 @@ API Яндекс.DNS для доменов
         Позиция? named
         Значение по умолчанию
         Принимать входные данные конвейера?false
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `<CommonParameters>`
-        Данный командлет поддерживает общие параметры: Verbose, Debug,
+        Этот командлет поддерживает общие параметры: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
-        OutBuffer и OutVariable. Для получения дополнительных сведений введите
-        [`get-help about_CommonParameters`][about_CommonParameters].
+        OutBuffer и OutVariable. Для получения дополнительных сведений см. раздел
+        [about_CommonParameters][].
 
 
 
@@ -252,7 +252,7 @@ API Яндекс.DNS для доменов
         Позиция? 1
         Значение по умолчанию
         Принимать входные данные конвейера?false
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `Name <String[]>`
         имя записи
@@ -261,7 +261,7 @@ API Яндекс.DNS для доменов
         Позиция? 2
         Значение по умолчанию
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `RRType <String[]>`
         тип записи
@@ -270,7 +270,7 @@ API Яндекс.DNS для доменов
         Позиция? 3
         Значение по умолчанию
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `RecordData <String[]>`
         содержимое удаляемой записи для точного определения удаляемой записи
@@ -279,13 +279,13 @@ API Яндекс.DNS для доменов
         Позиция? 4
         Значение по умолчанию
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `<CommonParameters>`
-        Данный командлет поддерживает общие параметры: Verbose, Debug,
+        Этот командлет поддерживает общие параметры: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
-        OutBuffer и OutVariable. Для получения дополнительных сведений введите
-        [`get-help about_CommonParameters`][about_CommonParameters].
+        OutBuffer и OutVariable. Для получения дополнительных сведений см. раздел
+        [about_CommonParameters][].
 
 
 
@@ -324,7 +324,7 @@ API Яндекс.DNS для доменов
         Позиция? 1
         Значение по умолчанию
         Принимать входные данные конвейера?false
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `Name <String>`
         имя записи
@@ -333,7 +333,7 @@ API Яндекс.DNS для доменов
         Позиция? 2
         Значение по умолчанию
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `RRType <String>`
         тип записи
@@ -342,7 +342,7 @@ API Яндекс.DNS для доменов
         Позиция? 3
         Значение по умолчанию
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `RecordData <String[]>`
         содержимое удаляемой записи для точного определения удаляемой записи
@@ -351,7 +351,7 @@ API Яндекс.DNS для доменов
         Позиция? 4
         Значение по умолчанию
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `id <String>`
         id записи. Параметр специфичен только для реализации Яндекс.API.
@@ -361,16 +361,16 @@ API Яндекс.DNS для доменов
         Позиция? 5
         Значение по умолчанию
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `PassThru [<SwitchParameter>]`
         передавать ли наименование записи дальше по конвейеру
 
         Требуется? false
         Позиция? named
-        Значение по умолчанию
+        Значение по умолчанию False
         Принимать входные данные конвейера?false
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `Force [<SwitchParameter>]`
         На данный момент параметр не используется. В дальнейшем - удаление созданных Яндексом записей
@@ -378,9 +378,9 @@ API Яндекс.DNS для доменов
 
         Требуется? false
         Позиция? named
-        Значение по умолчанию
+        Значение по умолчанию False
         Принимать входные данные конвейера?false
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `WhatIf [<SwitchParameter>]`
 
@@ -388,7 +388,7 @@ API Яндекс.DNS для доменов
         Позиция? named
         Значение по умолчанию
         Принимать входные данные конвейера?false
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `Confirm [<SwitchParameter>]`
 
@@ -396,13 +396,13 @@ API Яндекс.DNS для доменов
         Позиция? named
         Значение по умолчанию
         Принимать входные данные конвейера?false
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `<CommonParameters>`
-        Данный командлет поддерживает общие параметры: Verbose, Debug,
+        Этот командлет поддерживает общие параметры: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
-        OutBuffer и OutVariable. Для получения дополнительных сведений введите
-        [`get-help about_CommonParameters`][about_CommonParameters].
+        OutBuffer и OutVariable. Для получения дополнительных сведений см. раздел
+        [about_CommonParameters][].
 
 
 
@@ -441,16 +441,16 @@ API Яндекс.DNS для доменов
         Позиция? 1
         Значение по умолчанию
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `Name <String>`
         имя записи
 
         Требуется? false
         Позиция? 2
-        Значение по умолчанию
+        Значение по умолчанию @
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `IPv4Address <IPAddress[]>`
         IP адреса для создаваемой записи
@@ -459,25 +459,26 @@ API Яндекс.DNS для доменов
         Позиция? 3
         Значение по умолчанию
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `TimeToLive <Object>`
         TTL записи
+            [System.TimeSpan]
 
         Требуется? false
         Позиция? 4
         Значение по умолчанию
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `PassThru [<SwitchParameter>]`
         передавать ли описатель созданной записи в конвейер
 
         Требуется? false
         Позиция? named
-        Значение по умолчанию
+        Значение по умолчанию False
         Принимать входные данные конвейера?false
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `WhatIf [<SwitchParameter>]`
 
@@ -485,7 +486,7 @@ API Яндекс.DNS для доменов
         Позиция? named
         Значение по умолчанию
         Принимать входные данные конвейера?false
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `Confirm [<SwitchParameter>]`
 
@@ -493,13 +494,13 @@ API Яндекс.DNS для доменов
         Позиция? named
         Значение по умолчанию
         Принимать входные данные конвейера?false
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `<CommonParameters>`
-        Данный командлет поддерживает общие параметры: Verbose, Debug,
+        Этот командлет поддерживает общие параметры: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
-        OutBuffer и OutVariable. Для получения дополнительных сведений введите
-        [`get-help about_CommonParameters`][about_CommonParameters].
+        OutBuffer и OutVariable. Для получения дополнительных сведений см. раздел
+        [about_CommonParameters][].
 
 
 
@@ -538,16 +539,16 @@ API Яндекс.DNS для доменов
         Позиция? 1
         Значение по умолчанию
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `Name <String>`
         имя записи
 
         Требуется? false
         Позиция? 2
-        Значение по умолчанию
+        Значение по умолчанию @
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `IPv6Address <IPAddress[]>`
         IP адреса для создаваемой записи
@@ -556,25 +557,26 @@ API Яндекс.DNS для доменов
         Позиция? 3
         Значение по умолчанию
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `TimeToLive <Object>`
         TTL записи
+            [System.TimeSpan]
 
         Требуется? false
         Позиция? 4
         Значение по умолчанию
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `PassThru [<SwitchParameter>]`
         передавать ли описатель созданной записи в конвейер
 
         Требуется? false
         Позиция? named
-        Значение по умолчанию
+        Значение по умолчанию False
         Принимать входные данные конвейера?false
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `WhatIf [<SwitchParameter>]`
 
@@ -582,7 +584,7 @@ API Яндекс.DNS для доменов
         Позиция? named
         Значение по умолчанию
         Принимать входные данные конвейера?false
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `Confirm [<SwitchParameter>]`
 
@@ -590,13 +592,13 @@ API Яндекс.DNS для доменов
         Позиция? named
         Значение по умолчанию
         Принимать входные данные конвейера?false
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `<CommonParameters>`
-        Данный командлет поддерживает общие параметры: Verbose, Debug,
+        Этот командлет поддерживает общие параметры: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
-        OutBuffer и OutVariable. Для получения дополнительных сведений введите
-        [`get-help about_CommonParameters`][about_CommonParameters].
+        OutBuffer и OutVariable. Для получения дополнительных сведений см. раздел
+        [about_CommonParameters][].
 
 
 
@@ -641,7 +643,7 @@ API Яндекс.DNS для доменов
         Позиция? 1
         Значение по умолчанию
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `Name <String>`
         имя записи
@@ -650,7 +652,7 @@ API Яндекс.DNS для доменов
         Позиция? 2
         Значение по умолчанию
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `HostAliasName <String>`
         FQDN записей, на которые будет ссылаться CName
@@ -659,25 +661,26 @@ API Яндекс.DNS для доменов
         Позиция? 3
         Значение по умолчанию
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `TimeToLive <Object>`
         TTL записи
+            [System.TimeSpan]
 
         Требуется? false
         Позиция? 4
         Значение по умолчанию
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `PassThru [<SwitchParameter>]`
         передавать ли описатель созданной записи в конвейер
 
         Требуется? false
         Позиция? named
-        Значение по умолчанию
+        Значение по умолчанию False
         Принимать входные данные конвейера?false
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `WhatIf [<SwitchParameter>]`
 
@@ -685,7 +688,7 @@ API Яндекс.DNS для доменов
         Позиция? named
         Значение по умолчанию
         Принимать входные данные конвейера?false
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `Confirm [<SwitchParameter>]`
 
@@ -693,13 +696,13 @@ API Яндекс.DNS для доменов
         Позиция? named
         Значение по умолчанию
         Принимать входные данные конвейера?false
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `<CommonParameters>`
-        Данный командлет поддерживает общие параметры: Verbose, Debug,
+        Этот командлет поддерживает общие параметры: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
-        OutBuffer и OutVariable. Для получения дополнительных сведений введите
-        [`get-help about_CommonParameters`][about_CommonParameters].
+        OutBuffer и OutVariable. Для получения дополнительных сведений см. раздел
+        [about_CommonParameters][].
 
 
 
@@ -739,16 +742,16 @@ API Яндекс.DNS для доменов
         Позиция? 1
         Значение по умолчанию
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `Name <String>`
         имя записи
 
         Требуется? false
         Позиция? 2
-        Значение по умолчанию
+        Значение по умолчанию @
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `MailExchange <String>`
         FQDN сервера, который будет принимать SMTP почту
@@ -757,34 +760,35 @@ API Яндекс.DNS для доменов
         Позиция? 3
         Значение по умолчанию
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `Preference <UInt16>`
         Приоритет сервера
 
         Требуется? false
         Позиция? 4
-        Значение по умолчанию
+        Значение по умолчанию 0
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `TimeToLive <Object>`
         TTL записи
+            [System.TimeSpan]
 
         Требуется? false
         Позиция? 5
         Значение по умолчанию
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `PassThru [<SwitchParameter>]`
         передавать ли описатель созданной записи в конвейер
 
         Требуется? false
         Позиция? named
-        Значение по умолчанию
+        Значение по умолчанию False
         Принимать входные данные конвейера?false
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `WhatIf [<SwitchParameter>]`
 
@@ -792,7 +796,7 @@ API Яндекс.DNS для доменов
         Позиция? named
         Значение по умолчанию
         Принимать входные данные конвейера?false
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `Confirm [<SwitchParameter>]`
 
@@ -800,13 +804,13 @@ API Яндекс.DNS для доменов
         Позиция? named
         Значение по умолчанию
         Принимать входные данные конвейера?false
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `<CommonParameters>`
-        Данный командлет поддерживает общие параметры: Verbose, Debug,
+        Этот командлет поддерживает общие параметры: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
-        OutBuffer и OutVariable. Для получения дополнительных сведений введите
-        [`get-help about_CommonParameters`][about_CommonParameters].
+        OutBuffer и OutVariable. Для получения дополнительных сведений см. раздел
+        [about_CommonParameters][].
 
 
 
@@ -845,16 +849,16 @@ API Яндекс.DNS для доменов
         Позиция? 1
         Значение по умолчанию
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `Name <String>`
         Поддомен. Если значение параметра не указано, будет создана дополнительная NS запись для основного домена (ZoneName).
 
         Требуется? false
         Позиция? 2
-        Значение по умолчанию
+        Значение по умолчанию @
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `NameServer <String[]>`
         FQDN адрес DNS сервера, на котором размещена зона для создаваемого поддомена.
@@ -865,25 +869,26 @@ API Яндекс.DNS для доменов
         Позиция? 3
         Значение по умолчанию
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `TimeToLive <Object>`
         TTL записи
+            [System.TimeSpan]
 
         Требуется? false
         Позиция? 4
         Значение по умолчанию
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `PassThru [<SwitchParameter>]`
         передавать ли описатель созданной записи в конвейер
 
         Требуется? false
         Позиция? named
-        Значение по умолчанию
+        Значение по умолчанию False
         Принимать входные данные конвейера?false
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `WhatIf [<SwitchParameter>]`
 
@@ -891,7 +896,7 @@ API Яндекс.DNS для доменов
         Позиция? named
         Значение по умолчанию
         Принимать входные данные конвейера?false
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `Confirm [<SwitchParameter>]`
 
@@ -899,13 +904,13 @@ API Яндекс.DNS для доменов
         Позиция? named
         Значение по умолчанию
         Принимать входные данные конвейера?false
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `<CommonParameters>`
-        Данный командлет поддерживает общие параметры: Verbose, Debug,
+        Этот командлет поддерживает общие параметры: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
-        OutBuffer и OutVariable. Для получения дополнительных сведений введите
-        [`get-help about_CommonParameters`][about_CommonParameters].
+        OutBuffer и OutVariable. Для получения дополнительных сведений см. раздел
+        [about_CommonParameters][].
 
 
 
@@ -948,7 +953,7 @@ API Яндекс.DNS для доменов
         Позиция? 1
         Значение по умолчанию
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `Name <String>`
         имя записи
@@ -957,7 +962,7 @@ API Яндекс.DNS для доменов
         Позиция? 2
         Значение по умолчанию
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `Server <String>`
         FQDN сервера, на котором расположен сервис, описываемый SRV записью
@@ -966,52 +971,53 @@ API Яндекс.DNS для доменов
         Позиция? 3
         Значение по умолчанию
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `Port <UInt16>`
         Порт сервера
 
         Требуется? true
         Позиция? 4
-        Значение по умолчанию
+        Значение по умолчанию 0
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `Preference <UInt16>`
         Приоритет сервера
 
         Требуется? false
         Позиция? 5
-        Значение по умолчанию
+        Значение по умолчанию 0
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `Weight <UInt16>`
         Вес сервера
 
         Требуется? false
         Позиция? 6
-        Значение по умолчанию
+        Значение по умолчанию 0
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `TimeToLive <Object>`
         TTL записи
+            [System.TimeSpan]
 
         Требуется? false
         Позиция? 7
         Значение по умолчанию
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `PassThru [<SwitchParameter>]`
         передавать ли описатель созданной записи в конвейер
 
         Требуется? false
         Позиция? named
-        Значение по умолчанию
+        Значение по умолчанию False
         Принимать входные данные конвейера?false
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `WhatIf [<SwitchParameter>]`
 
@@ -1019,7 +1025,7 @@ API Яндекс.DNS для доменов
         Позиция? named
         Значение по умолчанию
         Принимать входные данные конвейера?false
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `Confirm [<SwitchParameter>]`
 
@@ -1027,13 +1033,13 @@ API Яндекс.DNS для доменов
         Позиция? named
         Значение по умолчанию
         Принимать входные данные конвейера?false
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `<CommonParameters>`
-        Данный командлет поддерживает общие параметры: Verbose, Debug,
+        Этот командлет поддерживает общие параметры: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
-        OutBuffer и OutVariable. Для получения дополнительных сведений введите
-        [`get-help about_CommonParameters`][about_CommonParameters].
+        OutBuffer и OutVariable. Для получения дополнительных сведений см. раздел
+        [about_CommonParameters][].
 
 
 
@@ -1076,16 +1082,16 @@ API Яндекс.DNS для доменов
         Позиция? 1
         Значение по умолчанию
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `Name <String>`
         Поддомен. Если значение параметра не указано, будет создана дополнительная NS запись для основного домена (ZoneName).
 
         Требуется? false
         Позиция? 2
-        Значение по умолчанию
+        Значение по умолчанию @
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `DescriptiveText <String[]>`
         Содержание TXT записи
@@ -1094,25 +1100,26 @@ API Яндекс.DNS для доменов
         Позиция? 3
         Значение по умолчанию
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `TimeToLive <Object>`
         TTL записи
+            [System.TimeSpan]
 
         Требуется? false
         Позиция? 4
         Значение по умолчанию
         Принимать входные данные конвейера?true (ByPropertyName)
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `PassThru [<SwitchParameter>]`
         передавать ли описатель созданной записи в конвейер
 
         Требуется? false
         Позиция? named
-        Значение по умолчанию
+        Значение по умолчанию False
         Принимать входные данные конвейера?false
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `WhatIf [<SwitchParameter>]`
 
@@ -1120,7 +1127,7 @@ API Яндекс.DNS для доменов
         Позиция? named
         Значение по умолчанию
         Принимать входные данные конвейера?false
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `Confirm [<SwitchParameter>]`
 
@@ -1128,13 +1135,13 @@ API Яндекс.DNS для доменов
         Позиция? named
         Значение по умолчанию
         Принимать входные данные конвейера?false
-        Принимать подстановочные знаки?
+        Принимать подстановочные знаки?false
 
 - `<CommonParameters>`
-        Данный командлет поддерживает общие параметры: Verbose, Debug,
+        Этот командлет поддерживает общие параметры: Verbose, Debug,
         ErrorAction, ErrorVariable, WarningAction, WarningVariable,
-        OutBuffer и OutVariable. Для получения дополнительных сведений введите
-        [`get-help about_CommonParameters`][about_CommonParameters].
+        OutBuffer и OutVariable. Для получения дополнительных сведений см. раздел
+        [about_CommonParameters][].
 
 
 
@@ -1150,7 +1157,7 @@ API Яндекс.DNS для доменов
 - [MS PowerShell DnsServer - Add-DnsServerResourceRecordTxt](http://msdn.microsoft.com/en-us/library/windows/desktop/hh832800.aspx)
 
 
-[about_CommonParameters]: http://go.microsoft.com/fwlink/?LinkID=113216 
+[about_CommonParameters]: http://go.microsoft.com/fwlink/?LinkID=113216 "Describes the parameters that can be used with any cmdlet."
 [add_a_record]: http://api.yandex.ru/pdd/doc/api-pdd/reference/api-dns_add_a_record.xml 
 [add_aaaa_record]: http://api.yandex.ru/pdd/doc/api-pdd/reference/api-dns_add_aaaa_record.xml 
 [add_cname_record]: http://api.yandex.ru/pdd/doc/api-pdd/reference/api-dns_add_cname_record.xml 
@@ -1158,19 +1165,19 @@ API Яндекс.DNS для доменов
 [add_ns_record]: http://api.yandex.ru/pdd/doc/api-pdd/reference/api-dns_add_ns_record.xml 
 [add_srv_record]: http://api.yandex.ru/pdd/doc/api-pdd/reference/api-dns_add_srv_record.xml 
 [add_txt_record]: http://api.yandex.ru/pdd/doc/api-pdd/reference/api-dns_add_txt_record.xml 
-[Add-DnsServerResourceRecord]: <ITG.Yandex.DnsServer#Add-DnsServerResourceRecord> "Метод (обёртка над Яндекс.API add_a_record) предназначен для создания новой записи на "припаркованном" на Яндексе домене на основе данных о записи из конвейера."
-[Add-DnsServerResourceRecordA]: <ITG.Yandex.DnsServer#Add-DnsServerResourceRecordA> "Метод (обёртка над Яндекс.API add_a_record) предназначен для создания новой записи типа A на "припаркованном" на Яндексе домене."
-[Add-DnsServerResourceRecordAAAA]: <ITG.Yandex.DnsServer#Add-DnsServerResourceRecordAAAA> "Метод (обёртка над Яндекс.API add_aaaa_record) предназначен для создания новой записи типа AAAA на "припаркованном" на Яндексе домене."
-[Add-DnsServerResourceRecordCName]: <ITG.Yandex.DnsServer#Add-DnsServerResourceRecordCName> "Метод (обёртка над Яндекс.API add_cname_record) предназначен для создания новой записи типа CNAME на "припаркованном" на Яндексе домене."
-[Add-DnsServerResourceRecordMX]: <ITG.Yandex.DnsServer#Add-DnsServerResourceRecordMX> "Метод (обёртка над Яндекс.API add_mx_record) предназначен для создания новой записи типа MX на "припаркованном" на Яндексе домене."
-[Add-DnsServerResourceRecordNS]: <ITG.Yandex.DnsServer#Add-DnsServerResourceRecordNS> "Метод (обёртка над Яндекс.API add_ns_record) предназначен для создания новой записи типа NS на "припаркованном" на Яндексе домене."
-[Add-DnsServerResourceRecordSRV]: <ITG.Yandex.DnsServer#Add-DnsServerResourceRecordSRV> "Метод (обёртка над Яндекс.API add_srv_record) предназначен для создания новой SRV записи на "припаркованном" на Яндексе домене."
-[Add-DnsServerResourceRecordTxt]: <ITG.Yandex.DnsServer#Add-DnsServerResourceRecordTxt> "Метод (обёртка над Яндекс.API add_txt_record) предназначен для создания новой записи типа TXT на "припаркованном" на Яндексе домене."
+[Add-DnsServerResourceRecord]: <#add-dnsserverresourcerecord> "Метод (обёртка над Яндекс.API add_a_record) предназначен для создания новой записи на "припаркованном" на Яндексе домене на основе данных о записи из конвейера."
+[Add-DnsServerResourceRecordA]: <#add-dnsserverresourcerecorda> "Метод (обёртка над Яндекс.API add_a_record) предназначен для создания новой записи типа A на "припаркованном" на Яндексе домене."
+[Add-DnsServerResourceRecordAAAA]: <#add-dnsserverresourcerecordaaaa> "Метод (обёртка над Яндекс.API add_aaaa_record) предназначен для создания новой записи типа AAAA на "припаркованном" на Яндексе домене."
+[Add-DnsServerResourceRecordCName]: <#add-dnsserverresourcerecordcname> "Метод (обёртка над Яндекс.API add_cname_record) предназначен для создания новой записи типа CNAME на "припаркованном" на Яндексе домене."
+[Add-DnsServerResourceRecordMX]: <#add-dnsserverresourcerecordmx> "Метод (обёртка над Яндекс.API add_mx_record) предназначен для создания новой записи типа MX на "припаркованном" на Яндексе домене."
+[Add-DnsServerResourceRecordNS]: <#add-dnsserverresourcerecordns> "Метод (обёртка над Яндекс.API add_ns_record) предназначен для создания новой записи типа NS на "припаркованном" на Яндексе домене."
+[Add-DnsServerResourceRecordSRV]: <#add-dnsserverresourcerecordsrv> "Метод (обёртка над Яндекс.API add_srv_record) предназначен для создания новой SRV записи на "припаркованном" на Яндексе домене."
+[Add-DnsServerResourceRecordTxt]: <#add-dnsserverresourcerecordtxt> "Метод (обёртка над Яндекс.API add_txt_record) предназначен для создания новой записи типа TXT на "припаркованном" на Яндексе домене."
 [delete_record]: http://api.yandex.ru/pdd/doc/api-pdd/reference/api-dns_delete_record.xml 
 [get_domain_records]: http://api.yandex.ru/pdd/doc/api-pdd/reference/api-dns_get_domain_records.xml 
-[Get-DnsServerResourceRecord]: <ITG.Yandex.DnsServer#Get-DnsServerResourceRecord> "Метод (обёртка над Яндекс.API get_domain_records) предназначен для получения записей из зоны "припаркованного" на Яндексе домене."
-[Get-Token]: <ITG.Yandex#Get-Token> "Метод (обёртка над Яндекс.API get_token) предназначен для получения авторизационного токена."
-[Remove-DnsServerResourceRecord]: <ITG.Yandex.DnsServer#Remove-DnsServerResourceRecord> "Метод (обёртка над Яндекс.API delete_record) предназначен для удаления записи из зоны "припаркованного" на Яндексе домене."
+[Get-DnsServerResourceRecord]: <#get-dnsserverresourcerecord> "Метод (обёртка над Яндекс.API get_domain_records) предназначен для получения записей из зоны "припаркованного" на Яндексе домене."
+[Get-Token]: <#get-token> "Метод (обёртка над Яндекс.API get_token) предназначен для получения авторизационного токена."
+[Remove-DnsServerResourceRecord]: <#remove-dnsserverresourcerecord> "Метод (обёртка над Яндекс.API delete_record) предназначен для удаления записи из зоны "припаркованного" на Яндексе домене."
 
 ---------------------------------------
 

@@ -1,8 +1,4 @@
-﻿'ITG.Yandex' `
-, 'ITG.RegExps' `
-, 'ITG.Utils' `
-| Import-Module;
-
+﻿
 filter ConvertFrom-YandexDnsServerResourceRecord {
 	param (
 		# имя записи
