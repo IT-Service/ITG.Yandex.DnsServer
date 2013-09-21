@@ -3,31 +3,62 @@
 	ConfirmImpact="Medium"
 )]
 param (
-	# имя домена - любой из доменов, зарегистрированных под Вашей учётной записью на сервисах Яндекса
-	[Parameter()]
-	[string]
-	[ValidateScript( { $_ -match "^$($reDomain)$" } )]
-	[Alias("domain_name")]
-	[Alias("Domain")]
-	$DomainName = 'csm.nov.ru'
 )
 
 Import-Module `
 	(Join-Path `
 		-Path ( Split-Path -Path ( $MyInvocation.MyCommand.Path ) -Parent ) `
-		-ChildPath 'ITG.Yandex.DnsServer' `
+		-ChildPath 'ITG.Yandex.DnsServer.psd1' `
 	) `
 	-Force `
 ;
-Get-Readme `
+Set-Readme `
 	-ModuleInfo ( Get-Module 'ITG.Yandex.DnsServer' ) `
-	-OutDefaultFile `
 	-ReferencedModules @(
 		'ITG.Yandex', 'ITG.Utils', 'ITG.WinAPI.UrlMon', 'ITG.WinAPI.User32' | Get-Module
 	) `
 ;
 
-#Get-DnsServerResourceRecord -ZoneName 'csm.nov.ru' -RRType 'SOA' `
+Set-Token `
+    -DomainName 'csm.nov.ru' `
+    -Token ( ConvertTo-SecureString -String (`
+        '01000000d08c9ddf0115d1118c7a00c04fc297eb010000003c7609fd8f4ca94f'+
+        '9aa41d9e6632179a0000000002000000000003660000c0000000100000000703'+
+        '27065085138f1f6b98a9ab0a64dd0000000004800000a00000001000000002c2'+
+        '302fc1c2e3332e887342b977db7f78000000664392f87f6424cb6ae82fcf4c66'+
+        'becd1a737f986c92e092a4a9055413550a9dfd3b760089811c1efcaa8da17ea6'+
+        'd03c9addbdca3f608787a4487701b5e117c657bc7334c7be36c6fcb7623d915c'+
+        'dfe8ae30bad6b950af7d3437062d051f2bcac5fb118472b1701d43adbf0e0281'+
+        'e5904256d5f7f305212714000000aa50cbd989d1423053c51a2062c07cbdb3720c2a'
+    )) `
+;
+$PSDefaultParameterValues['*:DomainName'] = 'csm.nov.ru';
+$PSDefaultParameterValues['*:ZoneName'] = 'csm.nov.ru';
+
+Remove-DnsServerResourceRecord -Name 'autodiscover' -RRType CNAME;
+Add-DnsServerResourceRecordCName -Name 'autodiscover' -HostAliasName 'gate';
+Remove-DnsServerResourceRecord -Name '_autodiscover._tcp' -RRType SRV;
+Add-DnsServerResourceRecordSRV -Name '_autodiscover._tcp' -Server 'autodiscover' -Port 443;
+
+Remove-DnsServerResourceRecord -Name 'imap' -RRType CNAME;
+Add-DnsServerResourceRecordCName -Name 'imap' -HostAliasName 'imap.yandex.ru.';
+Remove-DnsServerResourceRecord -Name '_imap._tcp' -RRType SRV;
+Add-DnsServerResourceRecordSRV -Name '_imap._tcp' -Server 'imap' -Port 993;
+
+Remove-DnsServerResourceRecord -Name 'pop3' -RRType CNAME;
+Add-DnsServerResourceRecordCName -Name 'pop3' -HostAliasName 'pop.yandex.ru.';
+Remove-DnsServerResourceRecord -Name '_pop3._tcp' -RRType SRV;
+Add-DnsServerResourceRecordSRV -Name '_pop3._tcp' -Server 'pop3' -Port 995;
+
+Remove-DnsServerResourceRecord -Name 'smtp' -RRType CNAME;
+Add-DnsServerResourceRecordCName -Name 'smtp' -HostAliasName 'smtp.yandex.ru.';
+Remove-DnsServerResourceRecord -Name '_smtp._tcp' -RRType SRV;
+Add-DnsServerResourceRecordSRV -Name '_smtp._tcp' -Server 'smtp' -Port 465;
+
+Get-DnsServerResourceRecord -RRType 'SRV','CNAME','A','MX' `
+| Out-GridView;
+
+#Get-DnsServerResourceRecord -RRType 'SOA' `
 #| Out-GridView;
 
 #Get-DnsServerResourceRecord -ZoneName 'csm.nov.ru' -Name 'test' `
@@ -57,9 +88,6 @@ Get-Readme `
 #Get-DnsServerResourceRecord -ZoneName 'csm.nov.ru' `
 #| ? { $_.HostName -like '*master' } `
 #| Add-DnsServerResourceRecord -ZoneName 'nice-tour.nov.ru' -PassThru `
-#| Out-GridView;
-
-#Get-DnsServerResourceRecord -ZoneName 'csm.nov.ru' -RRType 'A','CNAME','NS' `
 #| Out-GridView;
 
 #Add-DnsServerResourceRecordA -ZoneName 'csm.nov.ru' -Name 'www4' -IPv4Address '172.31.0.9';
